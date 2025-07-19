@@ -29,6 +29,12 @@
           <h1 class="header-logo">
             <a href="#">Design TOMARIGI</a>
           </h1>
+          <!-- ハンバーガーボタン -->
+          <button class="hamburger" aria-label="メニューを開く">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
           <nav class="gnav">
             <ul class="gnav-list">
               <li class="gnav-item"><a href="#works">WORKS</a></li>
@@ -58,7 +64,7 @@
             <div class="works-list">
               <a class="works-item" href="works-1.html">
                 <div class="works-img">
-                  <img src="img/works/beautysalon.png" alt="html1" />
+                  <img src="img/works/clinic.png" alt="html1" />
                 </div>
                 <p class="works-name">Website｜スクール課題</p>
                 <p class="works-info">WordPress</p>
@@ -72,17 +78,17 @@
               </a>
               <a class="works-item" href="works-3.html">
                 <div class="works-img">
-                  <img src="img/works/brass band.png" alt="WordPress" />
-                </div>
-                <p class="works-name">Website｜クライアントワーク</p>
-                <p class="works-info">Jimdo</p>
-              </a>
-              <a class="works-item" href="works-4.html">
-                <div class="works-img">
-                  <img src="img/works/clinic.png" alt="Photoshop" />
+                  <img src="img/works/beautysalon.png" alt="Photoshop" />
                 </div>
                 <p class="works-name">Website｜スクール課題</p>
                 <p class="works-info">WordPress</p>
+              </a>
+              <a class="works-item" href="works-4.html">
+                <div class="works-img">
+                  <img src="img/works/brassband.png" alt="WordPress" />
+                </div>
+                <p class="works-name">Website｜クライアントワーク</p>
+                <p class="works-info">Jimdo</p>
               </a>
               <a class="works-item" href="works-5.html">
                 <div class="works-img">
@@ -194,12 +200,107 @@
               />メールまたはSNSにてお願いいたします。
             </p>
             <div class="contact-list">
-              <a href="http://instagram.com/" target="_blank">
+              <a
+                href="https://www.instagram.com/design.tomarigi/"
+                target="_blank"
+              >
                 <img src="img/icon_instagram.png" alt="Instagram" />
               </a>
-              <a href="http://facebook.com/" target="_blank">
+
+              <script type="text/javascript">
+                function converter(M) {
+                  var str = "",
+                    str_as = "";
+                  for (var i = 0; i < M.length; i++) {
+                    str_as = M.charCodeAt(i);
+                    str += String.fromCharCode(str_as + 1);
+                  }
+                  return str;
+                }
+                function mail_to(k_1, k_2) {
+                  eval(
+                    String.fromCharCode(
+                      108,
+                      111,
+                      99,
+                      97,
+                      116,
+                      105,
+                      111,
+                      110,
+                      46,
+                      104,
+                      114,
+                      101,
+                      102,
+                      32,
+                      61,
+                      32,
+                      39,
+                      109,
+                      97,
+                      105,
+                      108,
+                      116,
+                      111,
+                      58
+                    ) +
+                      escape(k_1) +
+                      converter(
+                        String.fromCharCode(
+                          99,
+                          100,
+                          114,
+                          104,
+                          102,
+                          109,
+                          45,
+                          115,
+                          110,
+                          108,
+                          96,
+                          113,
+                          104,
+                          102,
+                          104,
+                          63,
+                          102,
+                          108,
+                          96,
+                          104,
+                          107,
+                          45,
+                          98,
+                          110,
+                          108,
+                          62,
+                          114,
+                          116,
+                          97,
+                          105,
+                          100,
+                          98,
+                          115,
+                          60
+                        )
+                      ) +
+                      escape(k_2) +
+                      "'"
+                  );
+                }
+
+                // 実行されるHTMLの表示部分
+                document.write(
+                  '<a href="javascript:mail_to(\'\', \'\')"><img src="img/icon_mail.png" alt="メール" /></a>'
+                );
+              </script>
+
+              <noscript>
+                <p>
+                  メールでのお問い合わせは画像をクリックしてください（JavaScriptが無効な場合）
+                </p>
                 <img src="img/icon_mail.png" alt="メール" />
-              </a>
+              </noscript>
             </div>
           </div>
         </section>
@@ -217,5 +318,29 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.querySelector(".hamburger");
+        const gnav = document.querySelector(".gnav");
+
+        // 開閉処理
+        hamburger.addEventListener("click", function (e) {
+          hamburger.classList.toggle("active");
+          gnav.classList.toggle("open");
+          e.stopPropagation(); // 自分でクリックした時は閉じない
+        });
+
+        // メニュー内クリックで閉じる
+        gnav.addEventListener("click", function (e) {
+          e.stopPropagation(); // メニュー内のクリックは無視
+        });
+
+        // 外をクリックしたら閉じる
+        document.addEventListener("click", function () {
+          hamburger.classList.remove("active");
+          gnav.classList.remove("open");
+        });
+      });
+    </script>
   </body>
 </html>

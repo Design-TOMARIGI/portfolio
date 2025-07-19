@@ -1,85 +1,178 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title>SAMURAI ポートフォリオ</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
-  <link href="css/ress.css" media="all" rel="stylesheet" type="text/css" />
-  <link href="css/style.css" media="all" rel="stylesheet" type="text/css" />
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <title>Design TOMARIGI</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link href="css/ress.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" media="all" rel="stylesheet" type="text/css" />
+  </head>
 
-<body>
-  <div class="wrapper">
-
-    <!-- header -->
-    <header class="header ">
-      <div class="container">
-        <h1 class="header-logo">
-          <a href="index.html">SAMURAI TARO</a>
-        </h1>
-        <nav class="gnav">
-          <ul class="gnav-list">
-            <li class="gnav-item"><a href="index.html#works">WORKS</a></li>
-            <li class="gnav-item"><a href="index.html#skill">SKILL</a></li>
-            <li class="gnav-item"><a href="index.html#about">ABOUT</a></li>
-            <li class="gnav-item"><a href="index.html#contact">CONTACT</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <!-- /header -->
-
-    <main class="content">
-
-      <article class="article">
-        <div class="article-container">
-          <h2 class="article-title">プロフィールサイト</h2>
-          <div class="article-body">
-            <p>
-              <img src="img/works-detail/works-2_pc.png" alt="">
-            </p>
-            <p>
-              カメラマンのお客様のプロフィールサイトになります。
-            </p>
+  <body>
+    <div class="wrapper">
+      <!-- header -->
+      <header class="header">
+        <div class="container">
+          <h1 class="header-logo">
+            <a href="index.html">Design TOMARIGI</a>
+          </h1>
+          <!-- ハンバーガーボタン -->
+          <button class="hamburger" aria-label="メニューを開く">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <nav class="gnav">
+            <ul class="gnav-list">
+              <li class="gnav-item"><a href="index.html#works">WORKS</a></li>
+              <li class="gnav-item"><a href="index.html#skill">SKILL</a></li>
+              <li class="gnav-item"><a href="index.html#about">ABOUT</a></li>
+              <li class="gnav-item">
+                <a href="index.html#contact">CONTACT</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <!-- /header -->
+      <!-- main -->
+      <main class="works-detail">
+        <div class="works-container">
+          <div class="works-sidebar">
+            <h3>制作したもの</h3>
             <h3>URL</h3>
-            <p><a href="" target="_blank" rel="noopener">ここにURLを入れてください。</a></p>
+            <p>
+              <a href="" target="_blank" rel="noopener"
+                >ここにURLを入れてください。</a
+              >
+            </p>
             <h3>担当</h3>
-            <p>コーディング</p>
+            <p>コーディング/WordPressテーマ化</p>
             <h3>サイトの目的</h3>
-            <p>SNS等でリンクをお貼りいただく目的でのサイトになります。</p>
+            <p>既存のHTMLサイトをWordPressで再構築する練習課題として取り組みました。</p>
             <h3>使用技術</h3>
-            <p>HTML/CSS</p>
+            <p>WordPress/PHP</p>
             <h3>デザインについて</h3>
-            <p>
-              スクロールなしですぐに情報が読み取れるよう、1枚のページに情報をまとめております。
-            </p>
-            <h3>コーディングについて</h3>
-            <p>
-              シンプルな技術を使用しておりますので、画像類のデータがございましたら2~3日程度で作成することができます。
-            </p>
+            <p>既存のデザインをもとに、構造を保ちながらWordPressテーマ化しました。PHPの理解が不十分な部分は、都度調べながら実装を進めました。
+カスタム投稿やテンプレート階層の仕組みを学ぶきっかけとなった課題です。</p>
           </div>
-          <div class="home-link">
-            <a href="index.html#works">Works一覧へ</a>
+          <div class="works-gallery">
+            <div class="gallery-grid">
+              <div class="img-scroll pc">
+                <img
+                  src="img/thumbnail/university/university1.png"
+                  alt="制作物1"
+                />
+              </div>
+              <div class="img-scroll sp">
+                <img
+                  src="img/thumbnail/university/university1-sp.png"
+                  alt="スマホモック"
+                />
+              </div>
+              <div class="img-scroll pc">
+                <img
+                  src="img/thumbnail/university/university2.png"
+                  alt="制作物2"
+                />
+              </div>
+              <div class="img-scroll sp">
+                <img
+                  src="img/thumbnail/university/university2-sp.png"
+                  alt="スマホモック"
+                />
+              </div>
+              <div class="img-scroll pc">
+                <img
+                  src="img/thumbnail/university/university3.png"
+                  alt="制作物3"
+                />
+              </div>
+              <div class="img-scroll sp">
+                <img
+                  src="img/thumbnail/university/university3-sp.png"
+                  alt="スマホモック"
+                />
+              </div>
+              <div class="img-scroll pc">
+                <img
+                  src="img/thumbnail/university/university4.png"
+                  alt="制作物4"
+                />
+              </div>
+              <div class="img-scroll sp">
+                <img
+                  src="img/thumbnail/university/university4-sp.png"
+                  alt="スマホモック"
+                />
+              </div>
+              <div class="img-scroll pc">
+                <img
+                  src="img/thumbnail/university/university5.png"
+                  alt="制作物4"
+                />
+              </div>
+              <div class="img-scroll sp">
+                <img
+                  src="img/thumbnail/university/university5-sp.png"
+                  alt="スマホモック"
+                />
+              </div>
+            </div>
+            <div class="home-link">
+              <a href="index.html#works">Works一覧へ</a>
+            </div>
           </div>
         </div>
-      </article>
+      </main>
+      <!-- /main -->
+    </div>
+    <div class="page-top" id="js-page-top">
+          <span class="material-icons-outlined">expand_less</span>
+        </div>
+      <!-- footer -->
+      <footer class="footer">
+        <div class="copyright">&copy;Design TOMARIGI</div>
+      </footer>
+      <!-- /footer -->
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.querySelector(".hamburger");
+        const gnav = document.querySelector(".gnav");
 
-      <div class="page-top" id="js-page-top">
-        <span class="material-icons-outlined">expand_less</span>
-      </div>
-    </main>
+        // 開閉処理
+        hamburger.addEventListener("click", function (e) {
+          hamburger.classList.toggle("active");
+          gnav.classList.toggle("open");
+          e.stopPropagation(); // 自分でクリックした時は閉じない
+        });
 
-    <!-- footer -->
-    <footer class="footer">
-      <div class="copyright">&copy;SAMURAI TARO</div>
-    </footer>
-    <!-- /footer -->
+        // メニュー内クリックで閉じる
+        gnav.addEventListener("click", function (e) {
+          e.stopPropagation(); // メニュー内のクリックは無視
+        });
 
-  </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script type='text/javascript' src="js/script.js"></script>
-</body>
+        // 外をクリックしたら閉じる
+        document.addEventListener("click", function () {
+          hamburger.classList.remove("active");
+          gnav.classList.remove("open");
+        });
+      });
+    </script>
+  </body>
 </html>
