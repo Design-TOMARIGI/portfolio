@@ -677,13 +677,8 @@ img {
   }
 
   .works-img {
-    width: 47%; /* 画面の約半分に調整（margin込み） */
+    width: 100%; /* 画面の約半分に調整（margin込み） */
     height: auto; /* 縦横比を柔軟にする場合はこれもOK */
-  }
-
-  .works-item {
-    width: 47%;
-    margin-right: 6%;
   }
 
   .works-item:nth-of-type(2n) {
