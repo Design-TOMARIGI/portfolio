@@ -370,9 +370,13 @@ img {
   margin-top: 10px;
 }
 
-.contact-list a {
-  margin-right: 50px; /* 余白を追加 */
+.contact-list {
+  display: flex;
+  justify-content: center; /* 中央寄せ */
+  gap: 30px; /* アイコン間の余白 */
+  flex-wrap: wrap; /* 小さい画面で折り返す */
 }
+
 .contact-list a:last-child {
   margin-right: 0; /* 最後のアイコンには余白をつけない */
 }
