@@ -523,6 +523,19 @@ img {
   margin-top: 40px;
 }
 
+/*media Queries 1024(タブレット）
+----------------------------------------------------*/
+
+@media screen and (max-width: 1024px) {
+  .works-item {
+    flex: 0 0 48%; /* 2列 */
+    margin-right: 4%;
+  }
+  .works-item:nth-of-type(2n) {
+    margin-right: 0;
+  }
+}
+
 /*media Queries 767
 ----------------------------------------------------*/
 
@@ -658,7 +671,7 @@ img {
   }
 
   .works-item {
-    flex: 0 0 48%;
+    flex: 0 0 100%;
     margin-right: 0;
     margin-bottom: 30px;
   }
