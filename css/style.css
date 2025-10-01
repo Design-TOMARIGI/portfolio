@@ -217,7 +217,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: center; /* 中央寄せ */
-  gap: 40px; /* 余白をgapで管理 */
+  gap: 60px; /* 余白をgapで管理 */
   margin: 0 auto 40px;
 }
 
@@ -772,3 +772,4 @@ img {
     overflow-y: visible;
   }
 }
+
