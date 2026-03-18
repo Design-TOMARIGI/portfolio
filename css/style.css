@@ -1,6 +1,7 @@
 body {
-  font-family: "Montserrat", "Helvetica Neue", Arial,
-    "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-family:
+    "Montserrat", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
   font-size: 15px;
   letter-spacing: 0.05em;
   color: #333;
@@ -63,7 +64,7 @@ img {
   font-size: 34px;
   font-weight: bold;
   line-height: 1;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-align: center;
   letter-spacing: 0.05em;
   color: #333;
@@ -73,7 +74,7 @@ img {
   font-size: 18px;
   font-weight: bold;
   line-height: 1;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   text-align: center;
   letter-spacing: 0.05em;
   color: #333;
@@ -213,6 +214,31 @@ img {
 /*--------------------------------
  Works
 ---------------------------------*/
+/* カテゴリーボタンのスタイル */
+.works-category {
+  display: flex;
+  justify-content: center;
+  gap: 10px 20px;
+  margin-bottom: 40px;
+  flex-wrap: wrap; /* 折り返しを許可 */
+}
+
+.category-btn {
+  font-size: 14px;
+  padding: 5px 10px;
+  font-weight: bold;
+  color: #333;
+  padding: 5px 15px;
+  border-bottom: 2px solid transparent; /* 下線を用意 */
+  transition: 0.3s;
+}
+
+.category-btn.active,
+.category-btn:hover {
+  color: #146788;
+  border-bottom: 2px solid #146788; /* アクティブな時に線を出す */
+}
+
 .works-list {
   display: flex;
   flex-wrap: wrap;
@@ -263,9 +289,11 @@ img {
   border: 1px solid #ddd;
   border-radius: 10px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  background-color: #fff;
+  background-color: #e5ebd3;
 }
 
 /*--------------------------------
@@ -527,7 +555,38 @@ img {
 
 .home-link {
   text-align: center;
-  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* h3と同じサイズにする、または少し太字にするなど自由に調整可能 */
+.sub-purpose-title {
+  font-size: 1rem; /* 好みのサイズに */
+  font-weight: bold;
+  color: #555; /* アースカラーに合わせて調整 */
+  margin-top: 15px;
+  margin-bottom: 5px;
+  display: block; /* 改行を確実にする */
+}
+
+.home-link {
+  margin-top: 60px; /* 画像群との間の距離（お好みで調整してください） */
+  text-align: center; /* リンクを中央に配置する場合 */
+  padding-bottom: 40px; /* 画面最下部との間の余白 */
+}
+
+.home-link a {
+  display: inline-block;
+  padding: 10px 20px;
+  /* アースカラーのコンセプトに合わせて色を調整する例 */
+  color: #6b5b4a;
+  text-decoration: none;
+  border: 1px solid #6b5b4a;
+  transition: all 0.3s ease;
+}
+
+/* ホバー時に少し色を変えると親切です */
+.home-link a:hover {
+  background-color: #f0ede4;
 }
 
 /*media Queries 1024(タブレット）
@@ -682,6 +741,11 @@ img {
     height: auto; /* 縦横比を柔軟にする場合はこれもOK */
   }
 
+  .thumbnail-img {
+    width: 100%; /* 画面の約半分に調整（margin込み） */
+    height: 100%; /* 縦横比を柔軟にする場合はこれもOK */
+  }
+
   .works-item:nth-of-type(2n) {
     margin-right: 0;
   }
@@ -691,6 +755,11 @@ img {
       transform: translateY(-5px);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     }
+  }
+
+  .category-btn {
+    font-size: 12px; /* スマホでは少し小さくして収まりを良くする */
+    padding: 5px 10px;
   }
 
   /* Skill */
@@ -772,4 +841,3 @@ img {
     overflow-y: visible;
   }
 }
-
