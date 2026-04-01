@@ -68,21 +68,24 @@
             <p>まずは「WordPressに触れて慣れる」ことを目的とした制作です。</p>
           </div>
           <div class="works-gallery">
-            <div class="gallery-grid">
-              <div class="img-scroll pc">
-                <img src="img/hp/beautysalon/beautysalon.webp" alt="課題の美容室サイト" />
-              </div>
-              <div class="img-scroll sp">
-                <img
-                  src="img/hp/beautysalon/beautysalon-sp.webp" 
-                  alt="課題の美容室サイト"
-                />
-              </div>
-            </div>
-            <div class="home-link">
-              <a href="index.html#works">Works一覧へ</a>
-            </div>
+        <div class="works-gallery">
+          <div class="view-switch">
+            <a href="#view-pc" class="btn-switch">PC版を表示</a>
+            <a href="#view-sp" class="btn-switch">スマホ版を表示</a>
           </div>
+
+          <div id="view-sp" class="works-img-content">
+            <img src="img/hp/beautysalon/beautysalon-sp.webp" alt="スマホ版" class="sp-img">
+          </div>
+
+          <div id="view-pc" class="works-img-content">
+            <img src="img/hp/beautysalon/beautysalon.webp" alt="PC版">
+          </div>
+
+          <div class="home-link">
+            <a href="index.html#works">Works一覧へ</a>
+          </div>
+        </div>
         </div>
       </main>
       <!-- /main -->
