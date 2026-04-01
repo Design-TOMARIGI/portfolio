@@ -1,0 +1,974 @@
+body {
+  font-family:
+    "Montserrat", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  color: #333;
+}
+
+a {
+  transition: opacity 0.3s;
+  text-decoration: none;
+  color: #146788;
+}
+
+a:hover {
+  color: #1ca9e3; /* ホバーで青く */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+  border-style: none;
+}
+
+.pc-only {
+  display: block;
+}
+
+.sp-only {
+  display: none;
+}
+
+/*--------------------------------
+ レイアウト
+---------------------------------*/
+.wrapper {
+  padding-top: 73px;
+}
+
+.section {
+  padding: 90px 0;
+}
+
+.section:nth-of-type(odd) {
+  background-color: #e5ebd3;
+}
+
+.section:nth-of-type(even) {
+  background-color: #fbefe7;
+}
+
+.container {
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/*--------------------------------
+ 見出し
+---------------------------------*/
+.title {
+  font-size: 34px;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 10px;
+  text-align: center;
+  letter-spacing: 0.15em;
+  color: #333;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 80px;
+  text-align: center;
+  letter-spacing: 0.15em;
+  color: #333;
+}
+
+.lead {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+/*--------------------------------
+ヘッダー
+---------------------------------*/
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 5px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+
+.header-logo {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-right: 20px;
+  letter-spacing: 0.05em;
+}
+
+.header-logo a {
+  color: #333;
+}
+
+.gnav-list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.gnav-item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.gnav-item a {
+  position: relative;
+  font-size: 13px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 0;
+  transition: 0.3s;
+  letter-spacing: 0.05em;
+  color: #333;
+}
+.gnav-item a:after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  content: "";
+  transition: 0.3s;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #333;
+}
+
+.gnav-item a:hover:after {
+  width: 100%;
+}
+
+/* ハンバーガーアイコン */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 30px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  position: relative;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #333;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* 開いたとき「×」に変化 */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/*--------------------------------
+ メインビジュアル
+---------------------------------*/
+.mv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  text-align: center;
+  background-color: #fbefe7;
+}
+
+.mv-container {
+  position: relative;
+  padding: 0 20px;
+}
+
+.mv-container img {
+  width: 100%;
+  height: auto;
+}
+
+/*--------------------------------
+ Works
+---------------------------------*/
+/* カテゴリーボタンのスタイル */
+.works-category {
+  display: flex;
+  justify-content: center;
+  gap: 10px 20px;
+  margin-bottom: 60px;
+  flex-wrap: wrap; /* 折り返しを許可 */
+}
+
+.category-btn {
+  font-size: 14px;
+  padding: 5px 10px;
+  font-weight: bold;
+  color: #333;
+  padding: 5px 15px;
+  border-bottom: 2px solid transparent; /* 下線を用意 */
+  transition: 0.3s;
+}
+
+.category-btn.active,
+.category-btn:hover {
+  color: #146788;
+  border-bottom: 2px solid #146788; /* アクティブな時に線を出す */
+}
+
+.works-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* 中央寄せ */
+  gap: 60px; /* 余白をgapで管理 */
+  margin: 0 auto 40px;
+}
+
+.works-item {
+  width: 300px; /* 固定幅にしてflexで並べる */
+  margin: 0; /* マージンはgapで調整 */
+}
+
+.works-item:hover {
+  opacity: 0.9;
+}
+
+.works-item:nth-of-type(3n) {
+  margin-right: 0;
+}
+
+.works-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ←画像の縦横比を崩さずフィット */
+  display: block;
+}
+
+.works-name {
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.works-info {
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+/* works-item のスタイル追加 */
+.works-img {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 以下はそのままでOK */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  background-color: #e5ebd3;
+}
+
+/*--------------------------------
+ Skill
+---------------------------------*/
+
+.skill-list.three-column {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+}
+
+.skill-item {
+  width: 300px;
+  text-align: center;
+}
+
+.skill-img img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 16px;
+}
+
+.skill-name {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.skill-text {
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.tools-used {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.tools-title {
+  font-size: 20px;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.tools-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.tools-list li {
+  background-color: #fcfcfc;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-size: 14px;
+}
+
+/*--------------------------------
+ About
+---------------------------------*/
+.profile {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.profile-img {
+  width: 20%;
+  margin-right: 30px;
+  border-radius: 50%;
+}
+.profile-img img {
+  border-radius: 50%;
+}
+.profile-body {
+  flex: 1;
+}
+
+.profile-body p {
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.profile-body p:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+/*--------------------------------
+ Contact
+---------------------------------*/
+.contact {
+  text-align: center;
+}
+
+.contact-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.contact-text {
+  margin-top: 10px;
+}
+
+.contact-list {
+  display: flex;
+  justify-content: center; /* 中央寄せ */
+  gap: 30px; /* アイコン間の余白 */
+  flex-wrap: wrap; /* 小さい画面で折り返す */
+}
+
+.contact-list a:last-child {
+  margin-right: 0; /* 最後のアイコンには余白をつけない */
+}
+
+/*--------------------------------
+ ページトップ
+---------------------------------*/
+.page-top {
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  background-color: #4c4c4c;
+}
+
+.page-top .material-icons-outlined {
+  vertical-align: bottom;
+  color: #fff;
+}
+
+/*--------------------------------
+ フッター
+---------------------------------*/
+.footer {
+  padding: 30px;
+  background-color: #797979;
+}
+
+.copyright {
+  font-size: 10px;
+  text-align: center;
+  color: #fcfcfc;
+}
+
+/*--------------------------------
+ 下層：Worksページ
+---------------------------------*/
+
+/* works-detailページ用 */
+
+/* 全体2カラムレイアウト */
+.works-container {
+  display: flex;
+  /* min-height: 100vh;
+  max-height: 100vh;
+  overflow: hidden; */
+}
+
+/* 左カラム：説明 */
+.works-sidebar {
+  width: 35%;
+  background-color: #e5ebd3;
+  padding: 40px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  /* 削除: height: 100%; */
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+}
+
+/* 左カラム：h3とpの間隔 */
+.works-sidebar h3 {
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.works-sidebar p {
+  margin-bottom: 20px;
+}
+
+/* 右カラム：ギャラリー */
+.works-gallery {
+  width: 65%;
+  padding: 40px;
+  box-sizing: border-box;
+  background-color: #fbefe7;
+  /* overflow-y: auto;
+  scroll-behavior: smooth;
+  scroll-padding-top: 0; */
+  /* 削除: height: 100%; */
+  min-height: 100vh;
+}
+
+/* ギャラリーの中の画像一覧（2列） */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto); /* ← サイズに合わせる */
+  gap: 60px;
+  justify-content: center; /* ← これで中央寄せが効くようになる！ */
+}
+
+/* 各画像の見た目 */
+.gallery-grid img {
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.works-gallery img {
+  width: 100%;
+  max-width: 800px; /* 前のページと合わせるなら800px、看板ならお好みで */
+  height: auto;
+  display: block;
+  margin: 0 auto 30px; /* 下に余白を入れてボタンと離す */
+
+  /* ドロップシャドウの設定 */
+  /* 水平 垂直 ぼかし 影の色(rgbaの最後が透明度) */
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+}
+
+/* --- 切り替えの仕組み --- */
+
+/* 1. 基本設定：コンテンツは一旦非表示 */
+.works-img-content {
+  display: none;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* 2. 【初期表示 & PCボタン押下時】
+   後ろにあるPC版（#view-pc）を表示させる */
+#view-pc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+/* 3. 【SPボタン押下時】
+   前にあるSP版（#view-sp）をターゲット時に表示させる */
+#view-sp:target {
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 20px; /* スクロールバーと画像が被らないための余白 */
+}
+
+/* 4. 【ここが解決策！】
+   SP版がターゲット（表示中）の時、その後ろにあるPC版を強制的に消す */
+#view-sp:target ~ #view-pc {
+  display: none !important;
+}
+
+/* --- 以下、既存のスタイル維持 --- */
+.works-img-content img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.08));
+}
+
+.sp-img {
+  width: calc(33.333% - 30px);
+  min-width: 120px;
+  max-width: 350px;
+}
+/* --- 画像のサイズ調整 --- */
+
+/* PC版の画像サイズ */
+.works-img-content img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  /* margin: 0 auto; は不要になるので削除してもOK */
+}
+
+/* スマホ版の各画像のサイズ（横に3つ並べる） */
+.works-img-content .sp-img {
+  flex: 0 0 170px;
+  width: 170px;
+  max-width: 170px; /* 念のため最大幅も指定 */
+
+  height: auto; /* 高さは比率を維持 */
+  object-fit: contain; /* 画像が歪まないように */
+}
+
+/* 画面幅が狭い時（スマホ）は、スマホ版画像も縦に並べる */
+@media screen and (max-width: 500px) {
+  #view-sp-2:target,
+  #view-sp:target {
+    flex-direction: column;
+    align-items: center;
+  }
+  .works-img-content .sp-img {
+    width: 90%;
+  }
+}
+
+/* --- 見た目の調整（そのままでもOK） --- */
+.view-switch {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+.btn-switch {
+  padding: 8px 16px;
+  border: 1px solid #6b5b4a;
+  color: #6b5b4a;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.btn-switch:hover {
+  background-color: #6b5b4a;
+  color: #fff;
+}
+
+/* 画像サイズ調整 */
+.works-img-content img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin: 0 auto;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.08));
+}
+
+.works-img-content .sp-img {
+  max-width: 350px; /* スマホ版は横幅を絞る */
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.1));
+}
+
+.img-scroll {
+  height: 300px;
+  overflow-y: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 6px solid #797979;
+  padding: 4px; /* ←ココ追加！画像と枠の間に余白 */
+  background-color: white; /* 背景を白にしてより「モック枠」感を出す */
+}
+
+/* imgの見た目を少し修正 */
+.img-scroll img {
+  border-radius: 8px; /* ← 枠より少し小さめで自然に */
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* スマホモック画像（縦長） */
+.img-scroll.sp {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+  height: 300px;
+  width: fit-content;
+  padding: 4px; /* ← 追加！ */
+  border-radius: 12px;
+  border: 6px solid #797979;
+  background-color: white;
+}
+
+.img-scroll.sp img {
+  width: auto;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px; /* ← 追加！ */
+}
+
+.home-link {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* h3と同じサイズにする、または少し太字にするなど自由に調整可能 */
+.sub-purpose-title {
+  font-size: 1rem; /* 好みのサイズに */
+  font-weight: bold;
+  color: #555; /* アースカラーに合わせて調整 */
+  margin-top: 15px;
+  margin-bottom: 5px;
+  display: block; /* 改行を確実にする */
+}
+
+.home-link {
+  margin-top: 60px; /* 画像群との間の距離（お好みで調整してください） */
+  text-align: center; /* リンクを中央に配置する場合 */
+  padding-bottom: 40px; /* 画面最下部との間の余白 */
+}
+
+.home-link a {
+  display: inline-block;
+  padding: 10px 20px;
+  /* アースカラーのコンセプトに合わせて色を調整する例 */
+  color: #6b5b4a;
+  text-decoration: none;
+  border: 1px solid #6b5b4a;
+  transition: all 0.3s ease;
+}
+
+/* ホバー時に少し色を変えると親切です */
+.home-link a:hover {
+  background-color: #f0ede4;
+}
+
+/*media Queries 1024(タブレット）
+----------------------------------------------------*/
+
+@media screen and (max-width: 1024px) {
+  .works-item {
+    width: 48%; /* 2列 */
+  }
+}
+
+/*media Queries 767
+----------------------------------------------------*/
+
+@media screen and (max-width: 767px) {
+  body {
+    font-size: 14px;
+  }
+
+  .pc-only {
+    display: none;
+  }
+
+  .sp-only {
+    display: block;
+  }
+
+  /* 見出し */
+  .title {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  .lead {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .gnav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    z-index: 1000;
+  }
+
+  .gnav.open {
+    display: block;
+  }
+
+  .gnav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .gnav-item a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+
+  /* レイアウト */
+  .wrapper {
+    padding-top: 57px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  /* ヘッダー */
+  .header .container {
+    padding: 15px;
+  }
+
+  .header-logo {
+    font-size: 15px;
+    margin-right: 15px;
+  }
+
+  .gnav-item:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  .gnav-item a {
+    font-size: 10px;
+  }
+
+  .gnav-item a:after {
+    display: none;
+  }
+
+  /*  メインビジュアル */
+  .mv {
+    height: 40vh;
+  }
+
+  .mv-container {
+    padding: 0 20px;
+  }
+
+  .mv-title {
+    font-size: 30px;
+  }
+  .mv-subtitle {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .mv-text {
+    top: 75%;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* Works */
+  .works-name {
+    font-size: 12px;
+  }
+
+  .works-info {
+    margin-top: 3px;
+  }
+
+  .works-list {
+    justify-content: center;
+  }
+
+  .works-item {
+    width: 70%;
+  }
+
+  .works-img {
+    width: 100%; /* 画面の約半分に調整（margin込み） */
+    height: auto; /* 縦横比を柔軟にする場合はこれもOK */
+  }
+
+  .thumbnail-img {
+    width: 100%; /* 画面の約半分に調整（margin込み） */
+    height: 100%; /* 縦横比を柔軟にする場合はこれもOK */
+  }
+
+  .works-item:nth-of-type(2n) {
+    margin-right: 0;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .works-item:hover .works-img {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .category-btn {
+    font-size: 12px; /* スマホでは少し小さくして収まりを良くする */
+    padding: 5px 10px;
+  }
+
+  /* Skill */
+  .skill-list {
+    display: block;
+    margin-bottom: 0;
+  }
+
+  .skill-item {
+    width: 100%;
+    margin-bottom: 35px;
+  }
+
+  .skill-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .skill-name {
+    margin-bottom: 5px;
+  }
+
+  .skill-text {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  /* About */
+  .profile {
+    display: block;
+  }
+  .profile-img {
+    width: 150px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+  }
+
+  .profile-body p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .profile-body p:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  /* フッター */
+  .footer {
+    padding: 20px;
+  }
+
+  /* 下層ページ */
+
+  .works-container {
+    flex-direction: column;
+  }
+
+  .works-sidebar {
+    position: static;
+  }
+
+  .works-sidebar,
+  .works-gallery {
+    width: 100%;
+    padding: 24px; /* スマホでは余白少なめに */
+    min-height: auto;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr; /* 1列に */
+    gap: 24px; /* gapもやや小さめに */
+  }
+
+  .gallery-grid img {
+    height: auto; /* 高さ300px固定だとスマホで苦しくなることがあるため */
+  }
+
+  .img-scroll {
+    height: auto; /* スマホではスクロールせず自然に伸ばす */
+    overflow-y: visible;
+  }
+}
