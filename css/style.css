@@ -303,7 +303,7 @@ img {
 .skill-list.three-column {
   display: flex;
   flex-wrap: wrap;
-  gap: 32px;
+  gap: 40px;
   justify-content: center;
 }
 
@@ -312,12 +312,26 @@ img {
   text-align: center;
 }
 
-.skill-img img {
-  width: 80px;
-  height: auto;
-  margin-bottom: 16px;
+/* 1. 外側の丸い枠の設定 */
+.skill-img {
+  background-color: #e3d0b5; /* 背景のベージュ色 */
+  width: 100px; /* 枠全体の幅（ここを大きくすると枠が広がります） */
+  height: 100px; /* 枠全体の高さ（幅と同じにする） */
+  border-radius: 50%; /* 正円にする */
+  margin: 0 auto 16px; /* 中央寄せにして下に余白を作る */
+
+  /* 中のアイコンを真ん中に配置するための設定 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* 2. 中のアイコン（画像）の設定 */
+.skill-img img {
+  width: 80px; /* アイコン自体の大きさ（お好みで調整） */
+  height: auto;
+  margin-bottom: 0; /* 親要素で調整するため0にする */
+}
 .skill-name {
   font-size: 20px;
   margin-bottom: 8px;
