@@ -66,17 +66,17 @@ img {
   line-height: 1;
   margin-bottom: 10px;
   text-align: center;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.15em;
   color: #333;
 }
 
 .subtitle {
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 300;
   line-height: 1;
-  margin-bottom: 20px;
+  margin-bottom: 80px;
   text-align: center;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.15em;
   color: #333;
 }
 
@@ -219,7 +219,7 @@ img {
   display: flex;
   justify-content: center;
   gap: 10px 20px;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   flex-wrap: wrap; /* 折り返しを許可 */
 }
 
@@ -486,9 +486,9 @@ img {
   padding: 40px;
   box-sizing: border-box;
   background-color: #fbefe7;
-  overflow-y: auto;
+  /* overflow-y: auto;
   scroll-behavior: smooth;
-  scroll-padding-top: 0;
+  scroll-padding-top: 0; */
   /* 削除: height: 100%; */
   min-height: 100vh;
 }
@@ -509,6 +509,137 @@ img {
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.works-gallery img {
+  width: 100%;
+  max-width: 800px; /* 前のページと合わせるなら800px、看板ならお好みで */
+  height: auto;
+  display: block;
+  margin: 0 auto 30px; /* 下に余白を入れてボタンと離す */
+
+  /* ドロップシャドウの設定 */
+  /* 水平 垂直 ぼかし 影の色(rgbaの最後が透明度) */
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+}
+
+/* --- 切り替えの仕組み --- */
+
+/* 1. 基本設定：コンテンツは一旦非表示 */
+.works-img-content {
+  display: none;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* 2. 【初期表示 & PCボタン押下時】
+   後ろにあるPC版（#view-pc）を表示させる */
+#view-pc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+/* 3. 【SPボタン押下時】
+   前にあるSP版（#view-sp）をターゲット時に表示させる */
+#view-sp:target {
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 20px; /* スクロールバーと画像が被らないための余白 */
+}
+
+/* 4. 【ここが解決策！】
+   SP版がターゲット（表示中）の時、その後ろにあるPC版を強制的に消す */
+#view-sp:target ~ #view-pc {
+  display: none !important;
+}
+
+/* --- 以下、既存のスタイル維持 --- */
+.works-img-content img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.08));
+}
+
+.sp-img {
+  width: calc(33.333% - 30px);
+  min-width: 120px;
+  max-width: 350px;
+}
+/* --- 画像のサイズ調整 --- */
+
+/* PC版の画像サイズ */
+.works-img-content img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  /* margin: 0 auto; は不要になるので削除してもOK */
+}
+
+/* スマホ版の各画像のサイズ（横に3つ並べる） */
+.works-img-content .sp-img {
+  flex: 0 0 170px;
+  width: 170px;
+  max-width: 170px; /* 念のため最大幅も指定 */
+
+  height: auto; /* 高さは比率を維持 */
+  object-fit: contain; /* 画像が歪まないように */
+}
+
+/* 画面幅が狭い時（スマホ）は、スマホ版画像も縦に並べる */
+@media screen and (max-width: 500px) {
+  #view-sp-2:target,
+  #view-sp:target {
+    flex-direction: column;
+    align-items: center;
+  }
+  .works-img-content .sp-img {
+    width: 90%;
+  }
+}
+
+/* --- 見た目の調整（そのままでもOK） --- */
+.view-switch {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+.btn-switch {
+  padding: 8px 16px;
+  border: 1px solid #6b5b4a;
+  color: #6b5b4a;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.btn-switch:hover {
+  background-color: #6b5b4a;
+  color: #fff;
+}
+
+/* 画像サイズ調整 */
+.works-img-content img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin: 0 auto;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.08));
+}
+
+.works-img-content .sp-img {
+  max-width: 350px; /* スマホ版は横幅を絞る */
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.1));
 }
 
 .img-scroll {
